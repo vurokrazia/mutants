@@ -9,3 +9,10 @@
 
 # rspec failure tracking
 .rspec_status
+
+spec/dummy/log/*.log
+spec/dummy/node_modules/
+spec/dummy/yarn-error.log
+spec/dummy/storage/
+spec/dummy/tmp/
+spec/dummy/config/application.yml
