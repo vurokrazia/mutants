@@ -33,12 +33,11 @@ Gem::Specification.new do |spec|
 
   # Uncomment to register a new dependency of your gem
   # spec.add_dependency "example-gem", "~> 1.0"
-  spec.add_dependency "rails", "~> 6.1.3"
   spec.add_dependency "pg"
 
   spec.add_development_dependency "rspec-rails"
   spec.add_development_dependency "coveralls"
-  spec.add_development_dependency "pry"
+  spec.add_development_dependency "debug"
   # For more information and examples about making a new gem, check out our
   # guide at: https://bundler.io/guides/creating_gem.html
 end
