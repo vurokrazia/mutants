@@ -1,0 +1,12 @@
+version: "3.2"
+volumes:
+  bundle_gems:
+services:
+  app:
+    restart: always
+    build:
+      context: .
+      dockerfile: dev.dockerfile
+    volumes:
+      - .:/home/developer/app
+      - bundle_gems:/usr/local/bundle
