@@ -49,7 +49,6 @@ module Mutants
         break unless row < sequence.length
 
         @last_character = sequence[row][0]
-
         return true if read_diagonals(Mutants::Orientation::FROM_LEFT,
                                       Mutants::Orientation::BELOW_MAIN_DIAGONAL,
                                       row, 0)
@@ -130,7 +129,7 @@ module Mutants
           if characters_count == Mutants::Configuration::COUNTER_SEQUENCES
             @counter += 1
             characters_count = 0
-            if counter >= Mutants::Configuration::MIN_SEQUENCES_TO_BE_MUTANT
+            if counter == Mutants::Configuration::MIN_SEQUENCES_TO_BE_MUTANT
               # If a find the minimum sequences to determine if it is Mutant, I finish the search.
               return true
             end
@@ -194,3 +193,35 @@ module Mutants
     end
   end
 end
+DNA = %w[
+  TTTTGA
+  ATGTGC
+  AGTTGG
+  AGATGG
+  CCCCTA
+  TCGCTG
+].freeze
+DNA2 = %w[
+  TTATGA
+  ATGTGC
+  AGTTGG
+  AGATGG
+  CAACTA
+  TCAAAC
+].freeze
+
+DNA3 = %w[
+  TTTT
+  TTTT
+  TTTT
+  TTTT
+].freeze
+
+DNA4 = %w[
+  TTTTGA
+  ATGTGC
+  ATGTCG
+  AGTGGG
+  CTCTGA
+  TCGCTG
+].freeze
