@@ -4,7 +4,7 @@
 
 Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/mutants`. To experiment with that code, run `bin/console` for an interactive prompt.
 
-TODO: Delete this and the text above, and describe your gem
+This library helps you detect if a DNA sequence belongs to a mutant or not.
 
 ## Installation
 
@@ -18,7 +18,37 @@ If bundler is not being used to manage dependencies, install the gem by executin
 
 ## Usage
 
-TODO: Write usage instructions here
+First step is has a sequence DNA:
+```ruby
+sequence = %w[
+    ATAG
+    TAAA
+    AGAG
+    ACAA
+]
+
+```
+The second step is to create an instance of the validations class with the sequence to validate, activate the flags to evaluate in the case:
+```ruby
+builder = Mutants::Validations.new
+    .set_sequence(
+        sequence
+    )
+    .set_validate_sizes(true)
+    .set_validate_dna(true)
+```
+If you have an invalid sequence by dimension sizes, it returns with this error:
+```ruby
+    Mutants::Validations::InvalidSizeDnaSequence
+```
+If you have an invalid sequence due to letters in the DNA AGTC sequence, it returns with this error:
+```ruby
+    Mutants::Validations::InvalidDNA
+```
+The las step is pass the builder to dectector class and execute isMutant with the sequence and check the result.
+```ruby
+Mutants::Detector.new(builder).isMutant(sequence)
+```
 
 ## Development
 
