@@ -1,7 +1,7 @@
 # Mutants
 
 ![ruby](https://github.com/vurokrazia/mutants/actions/workflows/ruby.yml/badge.svg)
-
+[![Gem Version](https://badge.fury.io/rb/mutants.svg)](https://badge.fury.io/rb/mutants)
 Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/mutants`. To experiment with that code, run `bin/console` for an interactive prompt.
 
 This library helps you detect if a DNA sequence belongs to a mutant or not.
